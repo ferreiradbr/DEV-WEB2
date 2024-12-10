@@ -1,0 +1,113 @@
+* {
+ 
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    margin: 0px 0px 0px 0px ;
+    padding: 0px 0px 0px 30px; /* Espaçamento interno */
+    font-size: 20px; /* Tamanho da fonte */
+
+   
+   background-color:#748df1;  /* Cor de fundo */  
+   color: white;
+   li{
+    display: inline-block;
+    padding: 20px 100px 0px 100px;
+    
+    } 
+}
+
+
+/*menu mobile*/
+.btn-abrir i{
+    color: black;
+    font-size: 40px;
+    position: fixed;
+    display: flex;
+    top: 5%;
+    right: 6%;
+}
+.menuhamburguer{
+    background-color:    rgba(26, 23, 23, 0.781);    
+    height: 100vh;
+    position: fixed;
+    top: 1%;
+    right: 0;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menuhamburguer.abrir-menu{
+    width: 70%;
+}
+.menuhamburguer .btn-fechar{
+    padding: 20px 4%;
+}
+
+.menuhamburguer .btn-fechar i{
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+}
+.menuhamburguer nav ul{
+    text-align: right;
+}
+
+.menuhamburguer nav ul li a{
+    color: #fcfbfb;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 4%;
+    display: block !important;
+}
+
+.menuhamburguer nav ul li a:hover{
+    /*background-color: #bdc2d6;*/
+    transform: scale(1.05);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;    
+    padding: 10px;
+    flex: 1;  
+    /* width: 100px;*/
+    
+}
+footer {
+    background-color: #748df1;    
+    color: white;    
+    text-align: center;   
+    padding: 10px;
+    
+}
+
+/* Precisei de auxilio nessa parte, vou deixar os comentarios para nã0 esquecer*/
+input[type="submit"] {
+    background-color: #748df1; 
+    color: white;
+    border: none; 
+    padding: 5px 10px; 
+    text-align: center; /* Centraliza o texto */
+   
+    display: inline-block; 
+    font-size: 12px; 
+    margin: 10px 0; 
+    
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+input[type="submit"]:hover {
+    background-color: #343f4b; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+@media screen and (max-width: 1130px){
+    .menu{
+        display: none;
+    }
+    
+}

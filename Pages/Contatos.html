@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+    <link href="../styles/stylescontato.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="../menu.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Dev Web</h1>
+        <nav>
+            <ul class ="menu">
+                <li><a href="../index.html">Pagina de apresentação</a></li>
+                <li><a href="Projetos.html">Projetos</a></li>
+                <li><a>Contatos</a></li>
+
+            </ul>
+        </nav>
+        
+        <div class="btn-abrir" id="btn-menu">
+            <i class="bi bi-list"></i>
+        </div>
+        <div class="menuhamburguer" id="menuhamburguer">
+            <div class ="btn-fechar">
+                <i class="bi bi-x"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Pagina de apresentação</a></li>
+                    <li><a href="Projetos.html">Projetos</a></li>
+                    <li><a>Contatos</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <main>
+        <h2>Entre em contato</h2>
+
+        <div>
+
+            <form action="/submit" method="POST" onsubmit="return false;">
+                <label for="name">Seu nome:</label><br>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="Mensagem">Mensagem:</label><br>
+                <input type="text" id="Mensagem" name="mensagem"><br>
+
+                <p>Informa sua avaliação:</p>
+
+                <input type="radio" id="nota" name="nota" value="0">
+                <label for="0">0</label><br>
+
+                <input type="radio" id="nota" name="nota" value="2">
+                <label for="2">2</label><br>
+
+                <input type="radio" id="nota" name="nota" value="4">
+                <label for="4">4</label><br>
+
+                <input type="radio" id="nota" name="nota" value="6">
+                <label for="6">6</label><br>
+
+                <input type="radio" id="nota" name="nota" value="8">
+                <label for="8">8</label><br>
+
+                <input type="radio" id="nota" name="nota" value="10">
+                <label for="10">10</label><br>
+
+                <input onclick="salvar()" type="submit" value="Enviar">
+
+            </form>
+
+            <script>
+                function imprimir() {
+                    const nome = localStorage.getItem("Nome");
+                    const email = localStorage.getItem("Email");
+                    const mensagem = `Olá, ${nome}, agradecemos pela sua mensagem! Em breve retornaremos contato pelo email ${email}.`;
+                    alert(mensagem);
+                }
+            
+                function salvar() {
+                    localStorage.setItem("Nome", document.querySelector("#name").value);
+                    localStorage.setItem("Email", document.querySelector("#email").value);
+                    localStorage.setItem("Mensagem", document.querySelector("#Mensagem").value);
+                    localStorage.setItem("Nota", document.querySelector("#nota").value);
+                    document.querySelector("#name").value = "";
+                    document.querySelector("#email").value = "";
+                    document.querySelector("#Mensagem").value = "";
+                    document.querySelector("#nota").value = "";
+                    imprimir();
+                }
+            </script>
+            
+
+        </div>
+
+        <img src="../Imagens/imgmapa.jpg" alt="Mapa" width="300" height="auto" /><br>
+
+        <table>
+            <tr>
+                <td>Contatos:</td>
+                <td>Email:</td>
+                <td>Linkedin</td>
+                <td>Endereço</td>
+            </tr>
+            <tr>
+                <td>(81)98543-4858</td>
+                <td>Cruzrikjr@hotmail.com</td>
+                <td><a href="https://www.linkedin.com/in/ricardo-ferreira-a2a1a0145/">Ricardo Ferreira</a></td>
+                <td>Recife-Pe</td>
+
+            </tr>
+        </table>
+
+        <footer>
+            <p>@2024 - DevWeb. Aluno Ricardo Ferreira da Cruz - UNINASSAU</p>
+        </footer>
+    </main>
+</body>
+
+</html>
